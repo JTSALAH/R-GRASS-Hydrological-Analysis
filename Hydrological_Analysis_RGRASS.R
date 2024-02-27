@@ -59,7 +59,14 @@
             strahler = "stream_order",
             flags = c("overwrite", "z"))
 
-  # 5: Topographic Wetness Index
+  # 5:Delineate watersheds
+  execGRASS("r.watershed",
+            elevation = "fill",
+            stream = "streams",
+            basin = "watersheds",
+            flags = c("overwrite"))
+
+  # 6: Topographic Wetness Index
   execGRASS("r.topidx", input = "elev", output = "twi")
 
 # ---- 3: Import GRASS Layers into R ----
@@ -67,4 +74,5 @@
   execGRASS("g.list", type = "raster")
   streams = read_RAST("streams")
   stream_order = read_RAST("stream_Order")
+  watersheds = read_RAST("watersheds")
   twi = read_RAST("twi")
