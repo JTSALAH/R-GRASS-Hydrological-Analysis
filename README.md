@@ -1,8 +1,6 @@
 # R-GRASS-Hydrological-Analysis
 Interface R &amp; GRASS GIS to automate a Hydrological Analysis from a DEM. Calculate streams, Strahler stream order, and Topographic Wetness Index for utilization as a SpatRaster in R.
 
-![Example TWI](https://github.com/JTSALAH/R-GRASS-Hydrological-Analysis/blob/main/Example_TWI.png)
-
 # 1: Initialize GRASS GIS
 To interface R & GRASS GIS, we need to initialize the R environment by specifying where GRASS is installed and ensure all modules of interest are present.
 ```r
@@ -89,3 +87,4 @@ To interface R & GRASS GIS, we need to initialize the R environment by specifyin
   watersheds = read_RAST("watersheds")
   twi = read_RAST("twi")
 ```
+![Example TWI](https://github.com/JTSALAH/R-GRASS-Hydrological-Analysis/blob/main/Example_TWI.png)
